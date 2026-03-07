@@ -1,6 +1,6 @@
 {
   "query": "Vibe Coding",
-  "generated_at": "2026-03-07T10:58:01Z",
+  "generated_at": "2026-03-07T11:27:13Z",
   "sections": {
     "heute": [
       {
@@ -13,11 +13,11 @@
         "published_at_ts": 1772809220,
         "duration_seconds": 2339,
         "duration_formatted": "38:59",
-        "views": 16329,
-        "likes": 995,
-        "views_formatted": "16.3K",
-        "likes_formatted": "995",
-        "views_per_day": 19632.1
+        "views": 16402,
+        "likes": 1004,
+        "views_formatted": "16.4K",
+        "likes_formatted": "1.0K",
+        "views_per_day": 19250.8
       },
       {
         "id": "aML6rJI1e_w",
@@ -29,11 +29,11 @@
         "published_at_ts": 1772807143,
         "duration_seconds": 2184,
         "duration_formatted": "36:24",
-        "views": 13938,
+        "views": 13987,
         "likes": 0,
-        "views_formatted": "13.9K",
+        "views_formatted": "14.0K",
         "likes_formatted": "0",
-        "views_per_day": 16286.7
+        "views_per_day": 15965.9
       },
       {
         "id": "DNSXlBmukck",
@@ -45,11 +45,11 @@
         "published_at_ts": 1772809231,
         "duration_seconds": 2247,
         "duration_formatted": "37:27",
-        "views": 13770,
-        "likes": 457,
-        "views_formatted": "13.8K",
-        "likes_formatted": "457",
-        "views_per_day": 16558.0
+        "views": 13956,
+        "likes": 465,
+        "views_formatted": "14.0K",
+        "likes_formatted": "465",
+        "views_per_day": 16382.4
       },
       {
         "id": "6kMO4nxKxjw",
@@ -61,27 +61,11 @@
         "published_at_ts": 1772826982,
         "duration_seconds": 11020,
         "duration_formatted": "3:03:40",
-        "views": 7476,
+        "views": 7498,
         "likes": 369,
         "views_formatted": "7.5K",
         "likes_formatted": "369",
-        "views_per_day": 11939.2
-      },
-      {
-        "id": "0UDqnhsy4GA",
-        "title": "Testing GPT 5.4 With Agent Swarms In BridgeSpace",
-        "channel": "BridgeMind",
-        "url": "https://www.youtube.com/watch?v=0UDqnhsy4GA",
-        "thumbnail": "https://i.ytimg.com/vi/0UDqnhsy4GA/mqdefault.jpg",
-        "published_at": "2026-03-06T16:00:06Z",
-        "published_at_ts": 1772812806,
-        "duration_seconds": 1385,
-        "duration_formatted": "23:05",
-        "views": 3562,
-        "likes": 90,
-        "views_formatted": "3.6K",
-        "likes_formatted": "90",
-        "views_per_day": 4507.5
+        "views_per_day": 11598.9
       },
       {
         "id": "YUSjm2CZ2ak",
@@ -93,11 +77,27 @@
         "published_at_ts": 1772834400,
         "duration_seconds": 816,
         "duration_formatted": "13:36",
-        "views": 3554,
-        "likes": 250,
+        "views": 3630,
+        "likes": 271,
         "views_formatted": "3.6K",
-        "likes_formatted": "250",
-        "views_per_day": 6577.7
+        "likes_formatted": "271",
+        "views_per_day": 6475.4
+      },
+      {
+        "id": "0UDqnhsy4GA",
+        "title": "Testing GPT 5.4 With Agent Swarms In BridgeSpace",
+        "channel": "BridgeMind",
+        "url": "https://www.youtube.com/watch?v=0UDqnhsy4GA",
+        "thumbnail": "https://i.ytimg.com/vi/0UDqnhsy4GA/mqdefault.jpg",
+        "published_at": "2026-03-06T16:00:06Z",
+        "published_at_ts": 1772812806,
+        "duration_seconds": 1385,
+        "duration_formatted": "23:05",
+        "views": 3598,
+        "likes": 90,
+        "views_formatted": "3.6K",
+        "likes_formatted": "90",
+        "views_per_day": 4439.2
       },
       {
         "id": "wn4CLCNdujs",
@@ -109,11 +109,11 @@
         "published_at_ts": 1772809307,
         "duration_seconds": 2180,
         "duration_formatted": "36:20",
-        "views": 2977,
+        "views": 3003,
         "likes": 145,
         "views_formatted": "3.0K",
         "likes_formatted": "145",
-        "views_per_day": 3583.5
+        "views_per_day": 3528.7
       },
       {
         "id": "5wKr_K2Pxeg",
@@ -125,11 +125,11 @@
         "published_at_ts": 1772826448,
         "duration_seconds": 1323,
         "duration_formatted": "22:03",
-        "views": 2836,
-        "likes": 203,
-        "views_formatted": "2.8K",
-        "likes_formatted": "203",
-        "views_per_day": 4484.9
+        "views": 2862,
+        "likes": 206,
+        "views_formatted": "2.9K",
+        "likes_formatted": "206",
+        "views_per_day": 4385.4
       },
       {
         "id": "1ftBnMf6boo",
@@ -141,11 +141,27 @@
         "published_at_ts": 1772810944,
         "duration_seconds": 1119,
         "duration_formatted": "18:39",
-        "views": 2458,
+        "views": 2507,
         "likes": 59,
         "views_formatted": "2.5K",
         "likes_formatted": "59",
-        "views_per_day": 3027.9
+        "views_per_day": 3013.0
+      },
+      {
+        "id": "nYBONU6chWE",
+        "title": "Linus Torvalds on “Vibe Coding” 🤖💻  #ai #artificialintelligence #coding  #vibecoding #linustorvalds",
+        "channel": "Lovnish Verma",
+        "url": "https://www.youtube.com/watch?v=nYBONU6chWE",
+        "thumbnail": "https://i.ytimg.com/vi/nYBONU6chWE/mqdefault.jpg",
+        "published_at": "2026-03-06T14:49:50Z",
+        "published_at_ts": 1772808590,
+        "duration_seconds": 87,
+        "duration_formatted": "1:27",
+        "views": 2316,
+        "likes": 129,
+        "views_formatted": "2.3K",
+        "likes_formatted": "129",
+        "views_per_day": 2695.2
       },
       {
         "id": "QKIY_BthvgU",
@@ -157,11 +173,11 @@
         "published_at_ts": 1772798400,
         "duration_seconds": 1068,
         "duration_formatted": "17:48",
-        "views": 2178,
-        "likes": 70,
+        "views": 2240,
+        "likes": 71,
         "views_formatted": "2.2K",
-        "likes_formatted": "70",
-        "views_per_day": 2275.9
+        "likes_formatted": "71",
+        "views_per_day": 2292.1
       },
       {
         "id": "E6p6pC8oJCc",
@@ -173,11 +189,11 @@
         "published_at_ts": 1772805621,
         "duration_seconds": 1031,
         "duration_formatted": "17:11",
-        "views": 1635,
+        "views": 1654,
         "likes": 127,
-        "views_formatted": "1.6K",
+        "views_formatted": "1.7K",
         "likes_formatted": "127",
-        "views_per_day": 1872.0
+        "views_per_day": 1850.8
       },
       {
         "id": "66aCQdSPuQY",
@@ -189,43 +205,11 @@
         "published_at_ts": 1772862832,
         "duration_seconds": 8625,
         "duration_formatted": "2:23:45",
-        "views": 860,
+        "views": 880,
         "likes": 60,
-        "views_formatted": "860",
+        "views_formatted": "880",
         "likes_formatted": "60",
-        "views_per_day": 4071.2
-      },
-      {
-        "id": "hg9sIpRzg08",
-        "title": "LIVE: Vibe Coding Friday (Clawcrib + Promtbrowser)",
-        "channel": "Clearmud",
-        "url": "https://www.youtube.com/watch?v=hg9sIpRzg08",
-        "thumbnail": "https://i.ytimg.com/vi/hg9sIpRzg08/mqdefault.jpg",
-        "published_at": "2026-03-06T22:27:28Z",
-        "published_at_ts": 1772836048,
-        "duration_seconds": 17617,
-        "duration_formatted": "4:53:37",
-        "views": 666,
-        "likes": 37,
-        "views_formatted": "666",
-        "likes_formatted": "37",
-        "views_per_day": 1277.7
-      },
-      {
-        "id": "Iu0iiNfbtrw",
-        "title": "10 Useful AI Apps You Can Vibe Code Under 10 Minutes (Beginner&#39;s Tutorial)",
-        "channel": "Tech With Lucy",
-        "url": "https://www.youtube.com/watch?v=Iu0iiNfbtrw",
-        "thumbnail": "https://i.ytimg.com/vi/Iu0iiNfbtrw/mqdefault.jpg",
-        "published_at": "2026-03-06T11:00:47Z",
-        "published_at_ts": 1772794847,
-        "duration_seconds": 670,
-        "duration_formatted": "11:10",
-        "views": 650,
-        "likes": 37,
-        "views_formatted": "650",
-        "likes_formatted": "37",
-        "views_per_day": 651.2
+        "views_per_day": 3801.2
       }
     ],
     "monat": [
@@ -239,11 +223,11 @@
         "published_at_ts": 1771542729,
         "duration_seconds": 68,
         "duration_formatted": "1:08",
-        "views": 725280,
+        "views": 725304,
         "likes": 34255,
         "views_formatted": "725.3K",
         "likes_formatted": "34.3K",
-        "views_per_day": 46821.8
+        "views_per_day": 46762.2
       },
       {
         "id": "QoQBzR1NIqI",
@@ -255,11 +239,11 @@
         "published_at_ts": 1770916499,
         "duration_seconds": 15043,
         "duration_formatted": "4:10:43",
-        "views": 515108,
-        "likes": 18458,
-        "views_formatted": "515.1K",
+        "views": 515471,
+        "likes": 18473,
+        "views_formatted": "515.5K",
         "likes_formatted": "18.5K",
-        "views_per_day": 22653.8
+        "views_per_day": 22649.6
       },
       {
         "id": "aZDTxEH7kK0",
@@ -271,11 +255,11 @@
         "published_at_ts": 1771553349,
         "duration_seconds": 467,
         "duration_formatted": "7:47",
-        "views": 404371,
+        "views": 404696,
         "likes": 31520,
-        "views_formatted": "404.4K",
+        "views_formatted": "404.7K",
         "likes_formatted": "31.5K",
-        "views_per_day": 26313.7
+        "views_per_day": 26300.2
       },
       {
         "id": "rXvU7bPJ8n4",
@@ -287,59 +271,11 @@
         "published_at_ts": 1771941680,
         "duration_seconds": 616,
         "duration_formatted": "10:16",
-        "views": 342853,
-        "likes": 18749,
-        "views_formatted": "342.9K",
-        "likes_formatted": "18.7K",
-        "views_per_day": 31533.3
-      },
-      {
-        "id": "mZzhfPle9QU",
-        "title": "How I use Claude Code (Meta Staff Engineer Tips)",
-        "channel": "John Kim",
-        "url": "https://www.youtube.com/watch?v=mZzhfPle9QU",
-        "thumbnail": "https://i.ytimg.com/vi/mZzhfPle9QU/mqdefault.jpg",
-        "published_at": "2026-02-07T16:41:09Z",
-        "published_at_ts": 1770482469,
-        "duration_seconds": 2773,
-        "duration_formatted": "46:13",
-        "views": 231575,
-        "likes": 5962,
-        "views_formatted": "231.6K",
-        "likes_formatted": "6.0K",
-        "views_per_day": 8341.5
-      },
-      {
-        "id": "bDcgHzCBgmQ",
-        "title": "The 5 Levels of AI Coding (Why Most of You Won&#39;t Make It Past Level 2)",
-        "channel": "AI News & Strategy Daily | Nate B Jones",
-        "url": "https://www.youtube.com/watch?v=bDcgHzCBgmQ",
-        "thumbnail": "https://i.ytimg.com/vi/bDcgHzCBgmQ/mqdefault.jpg",
-        "published_at": "2026-02-18T15:01:07Z",
-        "published_at_ts": 1771426867,
-        "duration_seconds": 2535,
-        "duration_formatted": "42:15",
-        "views": 199676,
-        "likes": 6391,
-        "views_formatted": "199.7K",
-        "likes_formatted": "6.4K",
-        "views_per_day": 11863.4
-      },
-      {
-        "id": "_kZCoW-Qxnc",
-        "title": "100 hours of OpenClaw lessons in 35 minutes",
-        "channel": "Alex Finn",
-        "url": "https://www.youtube.com/watch?v=_kZCoW-Qxnc",
-        "thumbnail": "https://i.ytimg.com/vi/_kZCoW-Qxnc/mqdefault.jpg",
-        "published_at": "2026-02-15T17:24:39Z",
-        "published_at_ts": 1771176279,
-        "duration_seconds": 2135,
-        "duration_formatted": "35:35",
-        "views": 191666,
-        "likes": 6771,
-        "views_formatted": "191.7K",
-        "likes_formatted": "6.8K",
-        "views_per_day": 9713.7
+        "views": 343386,
+        "likes": 18764,
+        "views_formatted": "343.4K",
+        "likes_formatted": "18.8K",
+        "views_per_day": 31523.6
       },
       {
         "id": "ya6520zh4pQ",
@@ -351,11 +287,11 @@
         "published_at_ts": 1770796434,
         "duration_seconds": 362,
         "duration_formatted": "6:02",
-        "views": 161224,
-        "likes": 9902,
-        "views_formatted": "161.2K",
+        "views": 161469,
+        "likes": 9919,
+        "views_formatted": "161.5K",
         "likes_formatted": "9.9K",
-        "views_per_day": 6682.1
+        "views_per_day": 6686.6
       },
       {
         "id": "zBWfNlDDlyE",
@@ -371,7 +307,7 @@
         "likes": 27068,
         "views_formatted": "157.9K",
         "likes_formatted": "27.1K",
-        "views_per_day": 6968.0
+        "views_per_day": 6961.7
       },
       {
         "id": "gqYyZuO34x0",
@@ -383,27 +319,11 @@
         "published_at_ts": 1770308183,
         "duration_seconds": 449,
         "duration_formatted": "7:29",
-        "views": 153670,
-        "likes": 4501,
-        "views_formatted": "153.7K",
+        "views": 153860,
+        "likes": 4505,
+        "views_formatted": "153.9K",
         "likes_formatted": "4.5K",
-        "views_per_day": 5160.4
-      },
-      {
-        "id": "wKy1_KLcxcs",
-        "title": "How to code with AI agents - Advice from OpenClaw creator | Peter Steinberger and Lex Fridman",
-        "channel": "Lex Clips",
-        "url": "https://www.youtube.com/watch?v=wKy1_KLcxcs",
-        "thumbnail": "https://i.ytimg.com/vi/wKy1_KLcxcs/mqdefault.jpg",
-        "published_at": "2026-02-12T11:40:19Z",
-        "published_at_ts": 1770896419,
-        "duration_seconds": 1874,
-        "duration_formatted": "31:14",
-        "views": 151231,
-        "likes": 2835,
-        "views_formatted": "151.2K",
-        "likes_formatted": "2.8K",
-        "views_per_day": 6583.7
+        "views_per_day": 5163.2
       },
       {
         "id": "86HM0RUWhCk",
@@ -415,11 +335,11 @@
         "published_at_ts": 1771507973,
         "duration_seconds": 1671,
         "duration_formatted": "27:51",
-        "views": 141144,
-        "likes": 4778,
-        "views_formatted": "141.1K",
+        "views": 141316,
+        "likes": 4787,
+        "views_formatted": "141.3K",
         "likes_formatted": "4.8K",
-        "views_per_day": 8881.2
+        "views_per_day": 8880.7
       },
       {
         "id": "41_TNGDDnfQ",
@@ -431,11 +351,75 @@
         "published_at_ts": 1770932056,
         "duration_seconds": 1133,
         "duration_formatted": "18:53",
-        "views": 138078,
-        "likes": 4344,
+        "views": 138116,
+        "likes": 4345,
         "views_formatted": "138.1K",
         "likes_formatted": "4.3K",
-        "views_per_day": 6121.0
+        "views_per_day": 6117.2
+      },
+      {
+        "id": "34lt658At0g",
+        "title": "🚨🚨 Vibe Coding A Social Network - Day 1 / 5 - Building With Zephyr #ad 🚨🚨",
+        "channel": "The PrimeTime",
+        "url": "https://www.youtube.com/watch?v=34lt658At0g",
+        "thumbnail": "https://i.ytimg.com/vi/34lt658At0g/mqdefault.jpg",
+        "published_at": "2026-02-10T03:55:40Z",
+        "published_at_ts": 1770695740,
+        "duration_seconds": 40303,
+        "duration_formatted": "11:11:43",
+        "views": 130247,
+        "likes": 1728,
+        "views_formatted": "130.2K",
+        "likes_formatted": "1.7K",
+        "views_per_day": 5145.3
+      },
+      {
+        "id": "nNUvVoRxcMI",
+        "title": "ELA DESTRUIU A CARREIRA COM VALORANT E VIBE CODING!",
+        "channel": "cortes do mano",
+        "url": "https://www.youtube.com/watch?v=nNUvVoRxcMI",
+        "thumbnail": "https://i.ytimg.com/vi/nNUvVoRxcMI/mqdefault.jpg",
+        "published_at": "2026-02-12T15:34:52Z",
+        "published_at_ts": 1770910492,
+        "duration_seconds": 1179,
+        "duration_formatted": "19:39",
+        "views": 127429,
+        "likes": 9943,
+        "views_formatted": "127.4K",
+        "likes_formatted": "9.9K",
+        "views_per_day": 5582.1
+      },
+      {
+        "id": "Epp-Vz0FrPg",
+        "title": "No, A.I. Is Not Going To Replace Software",
+        "channel": "Wall Street Millennial",
+        "url": "https://www.youtube.com/watch?v=Epp-Vz0FrPg",
+        "thumbnail": "https://i.ytimg.com/vi/Epp-Vz0FrPg/mqdefault.jpg",
+        "published_at": "2026-02-23T18:34:57Z",
+        "published_at_ts": 1771871697,
+        "duration_seconds": 1006,
+        "duration_formatted": "16:46",
+        "views": 119047,
+        "likes": 5529,
+        "views_formatted": "119.0K",
+        "likes_formatted": "5.5K",
+        "views_per_day": 10172.4
+      },
+      {
+        "id": "mViFYTwWvcM",
+        "title": "Spec-Driven Development: AI Assisted Coding Explained",
+        "channel": "IBM Technology",
+        "url": "https://www.youtube.com/watch?v=mViFYTwWvcM",
+        "thumbnail": "https://i.ytimg.com/vi/mViFYTwWvcM/mqdefault.jpg",
+        "published_at": "2026-02-28T12:01:30Z",
+        "published_at_ts": 1772280090,
+        "duration_seconds": 540,
+        "duration_formatted": "9:00",
+        "views": 116986,
+        "likes": 4342,
+        "views_formatted": "117.0K",
+        "likes_formatted": "4.3K",
+        "views_per_day": 16769.3
       }
     ],
     "all": [
@@ -449,11 +433,11 @@
         "published_at_ts": 1657627949,
         "duration_seconds": 0,
         "duration_formatted": "0:00",
-        "views": 631092976,
-        "likes": 3462338,
+        "views": 631095181,
+        "likes": 3462343,
         "views_formatted": "631.1M",
         "likes_formatted": "3.5M",
-        "views_per_day": 473101.5
+        "views_per_day": 473096.0
       },
       {
         "id": "meUr8fjy8lQ",
@@ -465,11 +449,11 @@
         "published_at_ts": 1763481663,
         "duration_seconds": 68,
         "duration_formatted": "1:08",
-        "views": 18134649,
+        "views": 18169223,
         "likes": 1633,
-        "views_formatted": "18.1M",
+        "views_formatted": "18.2M",
         "likes_formatted": "1.6K",
-        "views_per_day": 166694.7
+        "views_per_day": 166981.4
       },
       {
         "id": "Tw18-4U7mts",
@@ -485,7 +469,7 @@
         "likes": 65629,
         "views_formatted": "1.8M",
         "likes_formatted": "65.6K",
-        "views_per_day": 5339.5
+        "views_per_day": 5339.2
       },
       {
         "id": "jZCvJp9WoU4",
@@ -497,11 +481,11 @@
         "published_at_ts": 1765779087,
         "duration_seconds": 0,
         "duration_formatted": "0:00",
-        "views": 1369492,
-        "likes": 3579,
+        "views": 1369656,
+        "likes": 3580,
         "views_formatted": "1.4M",
         "likes_formatted": "3.6K",
-        "views_per_day": 16660.7
+        "views_per_day": 16658.6
       },
       {
         "id": "EKOU3JWDNLI",
@@ -513,11 +497,27 @@
         "published_at_ts": 1768417279,
         "duration_seconds": 551,
         "duration_formatted": "9:11",
-        "views": 1340661,
+        "views": 1340745,
         "likes": 47773,
         "views_formatted": "1.3M",
         "likes_formatted": "47.8K",
-        "views_per_day": 25949.4
+        "views_per_day": 25940.9
+      },
+      {
+        "id": "cESaIUWoCJQ",
+        "title": "How I Coded ANOTHER Profitable App SOLO (step by step / from scratch / with AI)",
+        "channel": "Edmund Yong",
+        "url": "https://www.youtube.com/watch?v=cESaIUWoCJQ",
+        "thumbnail": "https://i.ytimg.com/vi/cESaIUWoCJQ/mqdefault.jpg",
+        "published_at": "2025-05-02T19:46:36Z",
+        "published_at_ts": 1746215196,
+        "duration_seconds": 592,
+        "duration_formatted": "9:52",
+        "views": 1307617,
+        "likes": 37873,
+        "views_formatted": "1.3M",
+        "likes_formatted": "37.9K",
+        "views_per_day": 4236.5
       }
     ]
   }
