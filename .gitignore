@@ -1,0 +1,24 @@
+# macOS
+.DS_Store
+**/.DS_Store
+
+# Secrets & Tokens — NIEMALS committen
+.env
+.env.*
+*.env
+client_secret*.json
+token.json
+token_*.json
+*_token.json
+credentials.json
+service_account.json
+
+# Python
+*.pyc
+__pycache__/
+*.egg-info/
+.venv/
+venv/
+
+# Logs
+*.log
