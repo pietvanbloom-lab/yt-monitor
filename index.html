@@ -198,7 +198,7 @@ function filterVideos() {
     // Time filter
     if (state.time > 0) {
       const pub = dayjs(v.published_at);
-      if (now.diff(pub, 'day') > state.time) return false;
+      if (now.diff(pub, 'day') >= state.time) return false;
     }
     // Category
     if (state.cat && v.category !== state.cat) return false;
