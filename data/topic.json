@@ -1,6 +1,6 @@
 {
   "query": "Vibe Coding",
-  "generated_at": "2026-03-07T11:27:13Z",
+  "generated_at": "2026-03-07T11:30:02Z",
   "sections": {
     "heute": [
       {
@@ -17,7 +17,7 @@
         "likes": 1004,
         "views_formatted": "16.4K",
         "likes_formatted": "1.0K",
-        "views_per_day": 19250.8
+        "views_per_day": 19206.6
       },
       {
         "id": "aML6rJI1e_w",
@@ -29,11 +29,11 @@
         "published_at_ts": 1772807143,
         "duration_seconds": 2184,
         "duration_formatted": "36:24",
-        "views": 13987,
+        "views": 13989,
         "likes": 0,
         "views_formatted": "14.0K",
         "likes_formatted": "0",
-        "views_per_day": 15965.9
+        "views_per_day": 15932.5
       },
       {
         "id": "DNSXlBmukck",
@@ -45,11 +45,11 @@
         "published_at_ts": 1772809231,
         "duration_seconds": 2247,
         "duration_formatted": "37:27",
-        "views": 13956,
+        "views": 13971,
         "likes": 465,
         "views_formatted": "14.0K",
         "likes_formatted": "465",
-        "views_per_day": 16382.4
+        "views_per_day": 16362.3
       },
       {
         "id": "6kMO4nxKxjw",
@@ -65,7 +65,7 @@
         "likes": 369,
         "views_formatted": "7.5K",
         "likes_formatted": "369",
-        "views_per_day": 11598.9
+        "views_per_day": 11563.8
       },
       {
         "id": "YUSjm2CZ2ak",
@@ -77,11 +77,11 @@
         "published_at_ts": 1772834400,
         "duration_seconds": 816,
         "duration_formatted": "13:36",
-        "views": 3630,
+        "views": 3637,
         "likes": 271,
         "views_formatted": "3.6K",
         "likes_formatted": "271",
-        "views_per_day": 6475.4
+        "views_per_day": 6465.3
       },
       {
         "id": "0UDqnhsy4GA",
@@ -97,7 +97,7 @@
         "likes": 90,
         "views_formatted": "3.6K",
         "likes_formatted": "90",
-        "views_per_day": 4439.2
+        "views_per_day": 4428.4
       },
       {
         "id": "wn4CLCNdujs",
@@ -113,7 +113,7 @@
         "likes": 145,
         "views_formatted": "3.0K",
         "likes_formatted": "145",
-        "views_per_day": 3528.7
+        "views_per_day": 3520.6
       },
       {
         "id": "5wKr_K2Pxeg",
@@ -125,11 +125,11 @@
         "published_at_ts": 1772826448,
         "duration_seconds": 1323,
         "duration_formatted": "22:03",
-        "views": 2862,
+        "views": 2864,
         "likes": 206,
         "views_formatted": "2.9K",
         "likes_formatted": "206",
-        "views_per_day": 4385.4
+        "views_per_day": 4375.3
       },
       {
         "id": "1ftBnMf6boo",
@@ -145,7 +145,7 @@
         "likes": 59,
         "views_formatted": "2.5K",
         "likes_formatted": "59",
-        "views_per_day": 3013.0
+        "views_per_day": 3005.9
       },
       {
         "id": "nYBONU6chWE",
@@ -161,7 +161,7 @@
         "likes": 129,
         "views_formatted": "2.3K",
         "likes_formatted": "129",
-        "views_per_day": 2695.2
+        "views_per_day": 2689.1
       },
       {
         "id": "QKIY_BthvgU",
@@ -177,7 +177,7 @@
         "likes": 71,
         "views_formatted": "2.2K",
         "likes_formatted": "71",
-        "views_per_day": 2292.1
+        "views_per_day": 2287.6
       },
       {
         "id": "E6p6pC8oJCc",
@@ -193,7 +193,7 @@
         "likes": 127,
         "views_formatted": "1.7K",
         "likes_formatted": "127",
-        "views_per_day": 1850.8
+        "views_per_day": 1846.7
       },
       {
         "id": "66aCQdSPuQY",
@@ -209,7 +209,7 @@
         "likes": 60,
         "views_formatted": "880",
         "likes_formatted": "60",
-        "views_per_day": 3801.2
+        "views_per_day": 3769.2
       }
     ],
     "monat": [
@@ -227,7 +227,7 @@
         "likes": 34255,
         "views_formatted": "725.3K",
         "likes_formatted": "34.3K",
-        "views_per_day": 46762.2
+        "views_per_day": 46756.3
       },
       {
         "id": "QoQBzR1NIqI",
@@ -239,11 +239,11 @@
         "published_at_ts": 1770916499,
         "duration_seconds": 15043,
         "duration_formatted": "4:10:43",
-        "views": 515471,
-        "likes": 18473,
+        "views": 515507,
+        "likes": 18474,
         "views_formatted": "515.5K",
         "likes_formatted": "18.5K",
-        "views_per_day": 22649.6
+        "views_per_day": 22649.2
       },
       {
         "id": "aZDTxEH7kK0",
@@ -255,11 +255,11 @@
         "published_at_ts": 1771553349,
         "duration_seconds": 467,
         "duration_formatted": "7:47",
-        "views": 404696,
+        "views": 404741,
         "likes": 31520,
         "views_formatted": "404.7K",
         "likes_formatted": "31.5K",
-        "views_per_day": 26300.2
+        "views_per_day": 26299.8
       },
       {
         "id": "rXvU7bPJ8n4",
@@ -271,11 +271,59 @@
         "published_at_ts": 1771941680,
         "duration_seconds": 616,
         "duration_formatted": "10:16",
-        "views": 343386,
-        "likes": 18764,
+        "views": 343414,
+        "likes": 18767,
         "views_formatted": "343.4K",
         "likes_formatted": "18.8K",
-        "views_per_day": 31523.6
+        "views_per_day": 31520.5
+      },
+      {
+        "id": "mZzhfPle9QU",
+        "title": "How I use Claude Code (Meta Staff Engineer Tips)",
+        "channel": "John Kim",
+        "url": "https://www.youtube.com/watch?v=mZzhfPle9QU",
+        "thumbnail": "https://i.ytimg.com/vi/mZzhfPle9QU/mqdefault.jpg",
+        "published_at": "2026-02-07T16:41:09Z",
+        "published_at_ts": 1770482469,
+        "duration_seconds": 2773,
+        "duration_formatted": "46:13",
+        "views": 231696,
+        "likes": 5961,
+        "views_formatted": "231.7K",
+        "likes_formatted": "6.0K",
+        "views_per_day": 8339.2
+      },
+      {
+        "id": "bDcgHzCBgmQ",
+        "title": "The 5 Levels of AI Coding (Why Most of You Won&#39;t Make It Past Level 2)",
+        "channel": "AI News & Strategy Daily | Nate B Jones",
+        "url": "https://www.youtube.com/watch?v=bDcgHzCBgmQ",
+        "thumbnail": "https://i.ytimg.com/vi/bDcgHzCBgmQ/mqdefault.jpg",
+        "published_at": "2026-02-18T15:01:07Z",
+        "published_at_ts": 1771426867,
+        "duration_seconds": 2535,
+        "duration_formatted": "42:15",
+        "views": 199713,
+        "likes": 6392,
+        "views_formatted": "199.7K",
+        "likes_formatted": "6.4K",
+        "views_per_day": 11850.0
+      },
+      {
+        "id": "_kZCoW-Qxnc",
+        "title": "100 hours of OpenClaw lessons in 35 minutes",
+        "channel": "Alex Finn",
+        "url": "https://www.youtube.com/watch?v=_kZCoW-Qxnc",
+        "thumbnail": "https://i.ytimg.com/vi/_kZCoW-Qxnc/mqdefault.jpg",
+        "published_at": "2026-02-15T17:24:39Z",
+        "published_at_ts": 1771176279,
+        "duration_seconds": 2135,
+        "duration_formatted": "35:35",
+        "views": 191709,
+        "likes": 6772,
+        "views_formatted": "191.7K",
+        "likes_formatted": "6.8K",
+        "views_per_day": 9704.9
       },
       {
         "id": "ya6520zh4pQ",
@@ -288,10 +336,10 @@
         "duration_seconds": 362,
         "duration_formatted": "6:02",
         "views": 161469,
-        "likes": 9919,
+        "likes": 9920,
         "views_formatted": "161.5K",
         "likes_formatted": "9.9K",
-        "views_per_day": 6686.6
+        "views_per_day": 6686.1
       },
       {
         "id": "zBWfNlDDlyE",
@@ -307,7 +355,7 @@
         "likes": 27068,
         "views_formatted": "157.9K",
         "likes_formatted": "27.1K",
-        "views_per_day": 6961.7
+        "views_per_day": 6961.1
       },
       {
         "id": "gqYyZuO34x0",
@@ -323,7 +371,23 @@
         "likes": 4505,
         "views_formatted": "153.9K",
         "likes_formatted": "4.5K",
-        "views_per_day": 5163.2
+        "views_per_day": 5162.9
+      },
+      {
+        "id": "wKy1_KLcxcs",
+        "title": "How to code with AI agents - Advice from OpenClaw creator | Peter Steinberger and Lex Fridman",
+        "channel": "Lex Clips",
+        "url": "https://www.youtube.com/watch?v=wKy1_KLcxcs",
+        "thumbnail": "https://i.ytimg.com/vi/wKy1_KLcxcs/mqdefault.jpg",
+        "published_at": "2026-02-12T11:40:19Z",
+        "published_at_ts": 1770896419,
+        "duration_seconds": 1874,
+        "duration_formatted": "31:14",
+        "views": 151254,
+        "likes": 2835,
+        "views_formatted": "151.3K",
+        "likes_formatted": "2.8K",
+        "views_per_day": 6578.3
       },
       {
         "id": "86HM0RUWhCk",
@@ -336,10 +400,10 @@
         "duration_seconds": 1671,
         "duration_formatted": "27:51",
         "views": 141316,
-        "likes": 4787,
+        "likes": 4788,
         "views_formatted": "141.3K",
         "likes_formatted": "4.8K",
-        "views_per_day": 8880.7
+        "views_per_day": 8879.6
       },
       {
         "id": "41_TNGDDnfQ",
@@ -351,75 +415,11 @@
         "published_at_ts": 1770932056,
         "duration_seconds": 1133,
         "duration_formatted": "18:53",
-        "views": 138116,
+        "views": 138117,
         "likes": 4345,
         "views_formatted": "138.1K",
         "likes_formatted": "4.3K",
-        "views_per_day": 6117.2
-      },
-      {
-        "id": "34lt658At0g",
-        "title": "🚨🚨 Vibe Coding A Social Network - Day 1 / 5 - Building With Zephyr #ad 🚨🚨",
-        "channel": "The PrimeTime",
-        "url": "https://www.youtube.com/watch?v=34lt658At0g",
-        "thumbnail": "https://i.ytimg.com/vi/34lt658At0g/mqdefault.jpg",
-        "published_at": "2026-02-10T03:55:40Z",
-        "published_at_ts": 1770695740,
-        "duration_seconds": 40303,
-        "duration_formatted": "11:11:43",
-        "views": 130247,
-        "likes": 1728,
-        "views_formatted": "130.2K",
-        "likes_formatted": "1.7K",
-        "views_per_day": 5145.3
-      },
-      {
-        "id": "nNUvVoRxcMI",
-        "title": "ELA DESTRUIU A CARREIRA COM VALORANT E VIBE CODING!",
-        "channel": "cortes do mano",
-        "url": "https://www.youtube.com/watch?v=nNUvVoRxcMI",
-        "thumbnail": "https://i.ytimg.com/vi/nNUvVoRxcMI/mqdefault.jpg",
-        "published_at": "2026-02-12T15:34:52Z",
-        "published_at_ts": 1770910492,
-        "duration_seconds": 1179,
-        "duration_formatted": "19:39",
-        "views": 127429,
-        "likes": 9943,
-        "views_formatted": "127.4K",
-        "likes_formatted": "9.9K",
-        "views_per_day": 5582.1
-      },
-      {
-        "id": "Epp-Vz0FrPg",
-        "title": "No, A.I. Is Not Going To Replace Software",
-        "channel": "Wall Street Millennial",
-        "url": "https://www.youtube.com/watch?v=Epp-Vz0FrPg",
-        "thumbnail": "https://i.ytimg.com/vi/Epp-Vz0FrPg/mqdefault.jpg",
-        "published_at": "2026-02-23T18:34:57Z",
-        "published_at_ts": 1771871697,
-        "duration_seconds": 1006,
-        "duration_formatted": "16:46",
-        "views": 119047,
-        "likes": 5529,
-        "views_formatted": "119.0K",
-        "likes_formatted": "5.5K",
-        "views_per_day": 10172.4
-      },
-      {
-        "id": "mViFYTwWvcM",
-        "title": "Spec-Driven Development: AI Assisted Coding Explained",
-        "channel": "IBM Technology",
-        "url": "https://www.youtube.com/watch?v=mViFYTwWvcM",
-        "thumbnail": "https://i.ytimg.com/vi/mViFYTwWvcM/mqdefault.jpg",
-        "published_at": "2026-02-28T12:01:30Z",
-        "published_at_ts": 1772280090,
-        "duration_seconds": 540,
-        "duration_formatted": "9:00",
-        "views": 116986,
-        "likes": 4342,
-        "views_formatted": "117.0K",
-        "likes_formatted": "4.3K",
-        "views_per_day": 16769.3
+        "views_per_day": 6116.7
       }
     ],
     "all": [
@@ -434,10 +434,10 @@
         "duration_seconds": 0,
         "duration_formatted": "0:00",
         "views": 631095181,
-        "likes": 3462343,
+        "likes": 3462344,
         "views_formatted": "631.1M",
         "likes_formatted": "3.5M",
-        "views_per_day": 473096.0
+        "views_per_day": 473095.3
       },
       {
         "id": "meUr8fjy8lQ",
@@ -449,11 +449,11 @@
         "published_at_ts": 1763481663,
         "duration_seconds": 68,
         "duration_formatted": "1:08",
-        "views": 18169223,
+        "views": 18170923,
         "likes": 1633,
         "views_formatted": "18.2M",
         "likes_formatted": "1.6K",
-        "views_per_day": 166981.4
+        "views_per_day": 166994.0
       },
       {
         "id": "Tw18-4U7mts",
@@ -469,7 +469,7 @@
         "likes": 65629,
         "views_formatted": "1.8M",
         "likes_formatted": "65.6K",
-        "views_per_day": 5339.2
+        "views_per_day": 5339.1
       },
       {
         "id": "jZCvJp9WoU4",
@@ -481,11 +481,11 @@
         "published_at_ts": 1765779087,
         "duration_seconds": 0,
         "duration_formatted": "0:00",
-        "views": 1369656,
+        "views": 1369672,
         "likes": 3580,
         "views_formatted": "1.4M",
         "likes_formatted": "3.6K",
-        "views_per_day": 16658.6
+        "views_per_day": 16658.4
       },
       {
         "id": "EKOU3JWDNLI",
@@ -497,11 +497,11 @@
         "published_at_ts": 1768417279,
         "duration_seconds": 551,
         "duration_formatted": "9:11",
-        "views": 1340745,
+        "views": 1340747,
         "likes": 47773,
         "views_formatted": "1.3M",
         "likes_formatted": "47.8K",
-        "views_per_day": 25940.9
+        "views_per_day": 25939.9
       },
       {
         "id": "cESaIUWoCJQ",
@@ -513,8 +513,8 @@
         "published_at_ts": 1746215196,
         "duration_seconds": 592,
         "duration_formatted": "9:52",
-        "views": 1307617,
-        "likes": 37873,
+        "views": 1307620,
+        "likes": 37874,
         "views_formatted": "1.3M",
         "likes_formatted": "37.9K",
         "views_per_day": 4236.5
