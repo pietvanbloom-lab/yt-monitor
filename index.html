@@ -140,7 +140,6 @@
 <div class="topic-panel" id="topicPanel">
   <input class="topic-input" id="topicInput" type="text" placeholder="z.B. Iran Krieg, Automobilsport, Vibe Coding …" />
   <button class="topic-btn" onclick="loadTopic()">Suchen</button>
-  <span class="topic-hint">Führe zuerst aus: <code>python3 fetch_topic.py "Thema"</code></span>
 </div>
 
 <div class="controls">
@@ -383,43 +382,103 @@ function setMode(mode) {
   }
 }
 
-// ─── Topic search ──────────────────────────────────────────────
-const TOPIC_DATA_URL = './data/topic.json';
+// ─── Topic search (direkt via YouTube API) ─────────────────────
+const YT_API_KEY = 'AIzaSyBRjBabl_2_3Bq34xO0H2uB4UdjwwD-2yM';
+
+function isoToSeconds(iso) {
+  const m = iso.match(/PT(?:(\d+)H)?(?:(\d+)M)?(?:(\d+)S)?/);
+  if (!m) return 0;
+  return (parseInt(m[1]||0)*3600) + (parseInt(m[2]||0)*60) + parseInt(m[3]||0);
+}
+
+function formatDuration(secs) {
+  const h = Math.floor(secs/3600);
+  const m = Math.floor((secs%3600)/60);
+  const s = secs%60;
+  if (h > 0) return `${h}:${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;
+  return `${m}:${String(s).padStart(2,'0')}`;
+}
+
+async function ytSearch(query, publishedAfter) {
+  const params = new URLSearchParams({
+    part: 'snippet', type: 'video', q: query,
+    maxResults: 25, order: 'viewCount', key: YT_API_KEY,
+    ...(publishedAfter && { publishedAfter })
+  });
+  const r = await fetch(`https://www.googleapis.com/youtube/v3/search?${params}`);
+  const d = await r.json();
+  if (d.error) throw new Error(d.error.message);
+  return d.items || [];
+}
+
+async function ytVideoDetails(ids) {
+  const params = new URLSearchParams({
+    part: 'statistics,contentDetails,snippet',
+    id: ids.join(','), key: YT_API_KEY
+  });
+  const r = await fetch(`https://www.googleapis.com/youtube/v3/videos?${params}`);
+  const d = await r.json();
+  return d.items || [];
+}
+
+async function fetchTopicSection(query, publishedAfter) {
+  const searchItems = await ytSearch(query, publishedAfter);
+  if (!searchItems.length) return [];
+  const ids = searchItems.map(i => i.id.videoId).filter(Boolean);
+  const details = await ytVideoDetails(ids);
+  const now = Date.now();
+  return details
+    .filter(v => isoToSeconds(v.contentDetails.duration) > 62) // Shorts rausfiltern
+    .map(v => {
+      const views = parseInt(v.statistics.viewCount || 0);
+      const likes = parseInt(v.statistics.likeCount || 0);
+      const pubAt = v.snippet.publishedAt;
+      const ageDays = Math.max((now - new Date(pubAt).getTime()) / 86400000, 0.5);
+      const secs = isoToSeconds(v.contentDetails.duration);
+      return {
+        url: `https://www.youtube.com/watch?v=${v.id}`,
+        thumbnail: v.snippet.thumbnails.medium?.url || v.snippet.thumbnails.default?.url,
+        duration_formatted: formatDuration(secs),
+        title: v.snippet.title,
+        channel: v.snippet.channelTitle,
+        views_formatted: fmtNum(views),
+        likes_formatted: fmtNum(likes),
+        views_per_day: Math.round(views / ageDays),
+        published_at: pubAt,
+        category: null
+      };
+    });
+}
 
 async function loadTopic() {
   const query = document.getElementById('topicInput').value.trim();
   if (!query) return;
 
-  // Show loading state
   ['gridHeute','gridMonat','gridAll'].forEach(id => {
     document.getElementById(id).innerHTML = '<div class="placeholder"><div class="loader"></div></div>';
   });
   document.getElementById('topicResults').classList.add('visible');
-  document.getElementById('topicQueryLine').style.display = 'none';
+  document.getElementById('topicQueryLine').innerHTML = `Suche nach <b>"${escHtml(query)}"</b> …`;
+  document.getElementById('topicQueryLine').style.display = 'block';
+
+  const now = new Date();
+  const heute = new Date(now - 24*60*60*1000).toISOString();
+  const monat = new Date(now - 30*24*60*60*1000).toISOString();
 
   try {
-    const r = await fetch(TOPIC_DATA_URL + '?t=' + Date.now());
-    const d = await r.json();
-
-    if (d.query && d.query.toLowerCase() !== query.toLowerCase()) {
-      // Data is from a different query
-      document.getElementById('topicQueryLine').innerHTML =
-        `⚠️ Gecachte Daten für <b>"${escHtml(d.query)}"</b> — starte <code>python3 fetch_topic.py "${escHtml(query)}"</code> für neue Ergebnisse`;
-      document.getElementById('topicQueryLine').style.display = 'block';
-    } else {
-      document.getElementById('topicQueryLine').innerHTML =
-        `Ergebnisse für <b>"${escHtml(d.query)}"</b> · Stand: ${dayjs(d.generated_at).fromNow()}`;
-      document.getElementById('topicQueryLine').style.display = 'block';
-    }
-
-    renderTopicSection('gridHeute', 'countHeute', d.sections?.heute || []);
-    renderTopicSection('gridMonat', 'countMonat', d.sections?.monat || []);
-    renderTopicSection('gridAll',   'countAll',   d.sections?.all   || []);
-
+    const [vHeute, vMonat, vAll] = await Promise.all([
+      fetchTopicSection(query, heute),
+      fetchTopicSection(query, monat),
+      fetchTopicSection(query, null),
+    ]);
+    document.getElementById('topicQueryLine').innerHTML = `Ergebnisse für <b>"${escHtml(query)}"</b>`;
+    renderTopicSection('gridHeute', 'countHeute', vHeute);
+    renderTopicSection('gridMonat', 'countMonat', vMonat);
+    renderTopicSection('gridAll',   'countAll',   vAll);
   } catch(e) {
+    document.getElementById('topicQueryLine').innerHTML = `❌ Fehler: ${escHtml(e.message)}`;
     ['gridHeute','gridMonat','gridAll'].forEach(id => {
-      document.getElementById(id).innerHTML =
-        `<div class="topic-empty">Keine Daten — starte zuerst: <code>python3 fetch_topic.py "${escHtml(query)}"</code></div>`;
+      document.getElementById(id).innerHTML = '<div class="topic-empty">API-Fehler – bitte erneut versuchen.</div>';
     });
   }
 }
