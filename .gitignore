@@ -23,5 +23,3 @@ venv/
 # Logs
 *.log
 
-# Generated topic search data
-data/topic.json
