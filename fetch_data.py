@@ -143,29 +143,40 @@ def get_video_stats(video_ids):
     return stats
 
 def categorize_videos(titles):
-    """Batch-categorize all video titles via Claude Haiku 4.5."""
+    """Batch-categorize video titles via Claude Haiku 4.5 (200 per call)."""
     client = Anthropic(api_key=ANTHROPIC_API_KEY)
-    numbered = "\n".join(f"{i+1}. {t}" for i, t in enumerate(titles))
     cats_str = ", ".join(CATEGORIES)
-    prompt = (
-        f"Categorize each video title into exactly one category from this list: {cats_str}\n\n"
-        f"Titles:\n{numbered}\n\n"
-        f"Reply with ONLY a JSON array of strings, one category per title, in order. "
-        f"Example: [\"Politik & Gesellschaft\", \"Musik & Festival\", ...]"
-    )
-    msg = client.messages.create(
-        model="claude-haiku-4-5-20251001",
-        max_tokens=1024,
-        messages=[{"role": "user", "content": prompt}]
-    )
-    raw = msg.content[0].text.strip()
-    # extract JSON array
-    match = re.search(r'\[.*\]', raw, re.DOTALL)
-    if match:
-        result = json.loads(match.group())
-        if len(result) == len(titles):
-            return result
-    return ["Sonstiges"] * len(titles)
+    results = []
+    BATCH = 200
+
+    for i in range(0, len(titles), BATCH):
+        batch_titles = titles[i:i+BATCH]
+        numbered = "\n".join(f"{j+1}. {t}" for j, t in enumerate(batch_titles))
+        prompt = (
+            f"Categorize each video title into exactly one category from this list: {cats_str}\n\n"
+            f"Titles:\n{numbered}\n\n"
+            f"Reply with ONLY a JSON array of strings, one category per title, in order. "
+            f'Example: ["Politik & Gesellschaft", "Musik & Festival", ...]'
+        )
+        try:
+            msg = client.messages.create(
+                model="claude-haiku-4-5-20251001",
+                max_tokens=4096,
+                messages=[{"role": "user", "content": prompt}]
+            )
+            raw = msg.content[0].text.strip()
+            match = re.search(r'\[.*\]', raw, re.DOTALL)
+            if match:
+                batch_result = json.loads(match.group())
+                if len(batch_result) == len(batch_titles):
+                    results.extend(batch_result)
+                    print(f"  Batch {i//BATCH + 1}/{-(-len(titles)//BATCH)} kategorisiert", flush=True)
+                    continue
+        except Exception as e:
+            print(f"  Kategorisierung Batch {i//BATCH + 1} Fehler: {e}")
+        results.extend(["Sonstiges"] * len(batch_titles))
+
+    return results
 
 def main():
     now = datetime.now(timezone.utc)
