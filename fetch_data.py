@@ -143,42 +143,52 @@ def get_video_stats(video_ids):
     return stats
 
 def categorize_videos(titles):
-    """Batch-categorize video titles via Claude Haiku 4.5 (200 per call)."""
+    """Batch-categorize video titles via Claude Haiku 4.5 (50 per call)."""
     client = Anthropic(api_key=ANTHROPIC_API_KEY)
     cats_str = ", ".join(CATEGORIES)
     results = []
-    BATCH = 200
+    BATCH = 50
 
     for i in range(0, len(titles), BATCH):
         batch_titles = titles[i:i+BATCH]
+        n = len(batch_titles)
+        batch_num = i // BATCH + 1
+        total_batches = -(-len(titles) // BATCH)
         numbered = "\n".join(f"{j+1}. {t}" for j, t in enumerate(batch_titles))
         prompt = (
             f"Categorize each video title into exactly one category from this list: {cats_str}\n\n"
             f"Titles:\n{numbered}\n\n"
-            f"Reply with ONLY a JSON array of strings, one category per title, in order. "
+            f"Reply with ONLY a JSON array of exactly {n} strings, one per title, in order. "
             f'Example: ["Politik & Gesellschaft", "Musik & Festival", ...]'
         )
         try:
             msg = client.messages.create(
                 model="claude-haiku-4-5-20251001",
-                max_tokens=4096,
+                max_tokens=1024,
                 messages=[{"role": "user", "content": prompt}]
             )
             raw = msg.content[0].text.strip()
             match = re.search(r'\[.*\]', raw, re.DOTALL)
             if match:
                 batch_result = json.loads(match.group())
-                if len(batch_result) == len(batch_titles):
+                got = len(batch_result)
+                if got >= n:
+                    results.extend(batch_result[:n])
+                elif got > 0:
+                    batch_result += ["Sonstiges"] * (n - got)
                     results.extend(batch_result)
-                    print(f"  Batch {i//BATCH + 1}/{-(-len(titles)//BATCH)} kategorisiert", flush=True)
-                    continue
+                else:
+                    results.extend(["Sonstiges"] * n)
+                print(f"  ✓ Batch {batch_num}/{total_batches}: got {got}/{n}", flush=True)
+                continue
+            else:
+                print(f"  ⚠ Batch {batch_num}: no JSON in: {raw[:80]}", flush=True)
         except Exception as e:
-            print(f"  Kategorisierung Batch {i//BATCH + 1} Fehler: {e}")
-        # Fallback fuer diesen Batch
-        results.extend(["Sonstiges"] * len(batch_titles))
+            print(f"  ⚠ Batch {batch_num} error: {e}", flush=True)
+        # Fallback
+        results.extend(["Sonstiges"] * n)
 
     return results
-
 def main():
     now = datetime.now(timezone.utc)
     since = now - timedelta(days=DAYS_BACK)
@@ -195,7 +205,7 @@ def main():
                 print(f"  Resolving {handle}...", flush=True)
                 channel_id = get_channel_id(handle)
                 if not channel_id:
-                    print(f"  Could not resolve {handle}, skipping")
+                    print(f"  ⚠ Could not resolve {handle}, skipping")
                     continue
 
             playlist_id = "UU" + channel_id[2:]
@@ -209,7 +219,7 @@ def main():
             all_videos.extend(vids)
             processed_channels += 1
         except Exception as e:
-            print(f"  {name}: {e}")
+            print(f"  ✗ {name}: {e}")
 
     print(f"\nFetched {len(all_videos)} raw videos from {processed_channels} channels")
 
@@ -271,7 +281,7 @@ def main():
     with open(OUT_PATH, "w", encoding="utf-8") as f:
         json.dump(output, f, ensure_ascii=False, indent=2)
 
-    print(f"\nSaved {len(enriched)} videos to {OUT_PATH}")
+    print(f"\n✅ Saved {len(enriched)} videos to {OUT_PATH}")
 
 if __name__ == "__main__":
     main()
