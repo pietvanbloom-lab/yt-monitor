@@ -79,6 +79,31 @@
 
   .count-line { padding: 0 20px 10px; font-size: 12px; color: var(--muted); }
 
+  /* Mode toggle */
+  .mode-toggle { display: flex; gap: 0; background: var(--surface); border-radius: 8px; padding: 3px; border: 1px solid var(--border); }
+  .mode-btn { padding: 5px 16px; border-radius: 6px; font-size: 13px; cursor: pointer; border: none; background: transparent; color: var(--muted); transition: all .15s; white-space: nowrap; }
+  .mode-btn.active { background: var(--accent); color: #fff; font-weight: 600; }
+  .mode-btn:hover:not(.active) { color: var(--text); background: var(--surface2); }
+
+  /* Topic search panel */
+  .topic-panel { display: none; padding: 14px 20px; border-bottom: 1px solid var(--border); background: var(--surface); }
+  .topic-panel.visible { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+  .topic-input { flex: 1; min-width: 220px; background: var(--bg); border: 1px solid var(--border); color: var(--text); padding: 8px 14px; border-radius: 8px; font-size: 14px; outline: none; }
+  .topic-input:focus { border-color: var(--accent); }
+  .topic-btn { padding: 8px 20px; background: var(--accent); color: #fff; border: none; border-radius: 8px; font-size: 13px; font-weight: 600; cursor: pointer; white-space: nowrap; }
+  .topic-btn:hover { background: var(--accent2); }
+  .topic-hint { font-size: 11px; color: var(--muted); }
+
+  /* Topic results sections */
+  .topic-results { display: none; padding: 0 20px 20px; }
+  .topic-results.visible { display: block; }
+  .topic-section { margin-top: 20px; }
+  .section-header { font-size: 13px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: .08em; margin-bottom: 12px; padding-bottom: 6px; border-bottom: 1px solid var(--border); }
+  .section-header span { color: var(--accent); }
+  .topic-empty { color: var(--muted); font-size: 13px; padding: 16px 0; }
+  .topic-query-line { font-size: 13px; color: var(--muted); padding: 10px 20px 0; }
+  .topic-query-line b { color: var(--text); }
+
   @media (max-width: 600px) {
     header { flex-direction: column; align-items: flex-start; gap: 6px; }
     .controls { gap: 8px; }
@@ -102,6 +127,21 @@
     <span class="meta" id="statUpdated">–</span>
   </div>
 </header>
+
+<!-- Mode toggle in header area -->
+<div style="padding: 10px 20px; border-bottom: 1px solid var(--border); background: var(--bg); display: flex; align-items: center; gap: 12px;">
+  <div class="mode-toggle">
+    <button class="mode-btn active" id="modeKanaele" onclick="setMode('kanaele')">📺 Meine Kanäle</button>
+    <button class="mode-btn" id="modeThema" onclick="setMode('thema')">🔍 Themensuche</button>
+  </div>
+</div>
+
+<!-- Topic search panel -->
+<div class="topic-panel" id="topicPanel">
+  <input class="topic-input" id="topicInput" type="text" placeholder="z.B. Iran Krieg, Automobilsport, Vibe Coding …" />
+  <button class="topic-btn" onclick="loadTopic()">Suchen</button>
+  <span class="topic-hint">Führe zuerst aus: <code>python3 fetch_topic.py "Thema"</code></span>
+</div>
 
 <div class="controls">
   <!-- Time filter -->
@@ -134,9 +174,26 @@
 <div class="cat-filter" id="catFilter"></div>
 
 <div class="count-line" id="countLine"></div>
-<div class="grid-container">
+<div class="grid-container" id="kanaeleView">
   <div class="grid" id="grid">
     <div class="placeholder"><div class="loader"></div><p style="margin-top:16px">Lade Videos…</p></div>
+  </div>
+</div>
+
+<!-- Topic results -->
+<div id="topicQueryLine" class="topic-query-line" style="display:none"></div>
+<div class="topic-results" id="topicResults">
+  <div class="topic-section" id="sectionHeute">
+    <div class="section-header">⚡ Heute <span id="countHeute"></span></div>
+    <div class="grid" id="gridHeute"></div>
+  </div>
+  <div class="topic-section" id="sectionMonat">
+    <div class="section-header">📅 Letzter Monat <span id="countMonat"></span></div>
+    <div class="grid" id="gridMonat"></div>
+  </div>
+  <div class="topic-section" id="sectionAll">
+    <div class="section-header">🌐 Gesamt (Top Views) <span id="countAll"></span></div>
+    <div class="grid" id="gridAll"></div>
   </div>
 </div>
 
@@ -300,6 +357,88 @@ document.getElementById('searchInput').addEventListener('input', e => {
 });
 
 loadData();
+
+// ─── Mode switching ────────────────────────────────────────────
+let currentMode = 'kanaele';
+
+function setMode(mode) {
+  currentMode = mode;
+  const isKanaele = mode === 'kanaele';
+
+  document.getElementById('modeKanaele').classList.toggle('active', isKanaele);
+  document.getElementById('modeThema').classList.toggle('active', !isKanaele);
+
+  // Controls + category filter only for Kanäle mode
+  document.querySelector('.controls').style.display       = isKanaele ? '' : 'none';
+  document.getElementById('catFilter').style.display      = isKanaele ? '' : 'none';
+  document.getElementById('countLine').style.display      = isKanaele ? '' : 'none';
+  document.getElementById('kanaeleView').style.display    = isKanaele ? '' : 'none';
+
+  document.getElementById('topicPanel').classList.toggle('visible', !isKanaele);
+  document.getElementById('topicResults').classList.toggle('visible', false);
+  document.getElementById('topicQueryLine').style.display = 'none';
+
+  if (!isKanaele) {
+    setTimeout(() => document.getElementById('topicInput').focus(), 50);
+  }
+}
+
+// ─── Topic search ──────────────────────────────────────────────
+const TOPIC_DATA_URL = './data/topic.json';
+
+async function loadTopic() {
+  const query = document.getElementById('topicInput').value.trim();
+  if (!query) return;
+
+  // Show loading state
+  ['gridHeute','gridMonat','gridAll'].forEach(id => {
+    document.getElementById(id).innerHTML = '<div class="placeholder"><div class="loader"></div></div>';
+  });
+  document.getElementById('topicResults').classList.add('visible');
+  document.getElementById('topicQueryLine').style.display = 'none';
+
+  try {
+    const r = await fetch(TOPIC_DATA_URL + '?t=' + Date.now());
+    const d = await r.json();
+
+    if (d.query && d.query.toLowerCase() !== query.toLowerCase()) {
+      // Data is from a different query
+      document.getElementById('topicQueryLine').innerHTML =
+        `⚠️ Gecachte Daten für <b>"${escHtml(d.query)}"</b> — starte <code>python3 fetch_topic.py "${escHtml(query)}"</code> für neue Ergebnisse`;
+      document.getElementById('topicQueryLine').style.display = 'block';
+    } else {
+      document.getElementById('topicQueryLine').innerHTML =
+        `Ergebnisse für <b>"${escHtml(d.query)}"</b> · Stand: ${dayjs(d.generated_at).fromNow()}`;
+      document.getElementById('topicQueryLine').style.display = 'block';
+    }
+
+    renderTopicSection('gridHeute', 'countHeute', d.sections?.heute || []);
+    renderTopicSection('gridMonat', 'countMonat', d.sections?.monat || []);
+    renderTopicSection('gridAll',   'countAll',   d.sections?.all   || []);
+
+  } catch(e) {
+    ['gridHeute','gridMonat','gridAll'].forEach(id => {
+      document.getElementById(id).innerHTML =
+        `<div class="topic-empty">Keine Daten — starte zuerst: <code>python3 fetch_topic.py "${escHtml(query)}"</code></div>`;
+    });
+  }
+}
+
+function renderTopicSection(gridId, countId, videos) {
+  const grid = document.getElementById(gridId);
+  const count = document.getElementById(countId);
+  count.textContent = videos.length ? `(${videos.length})` : '';
+  if (!videos.length) {
+    grid.innerHTML = '<div class="topic-empty">Keine Videos gefunden.</div>';
+    return;
+  }
+  grid.innerHTML = videos.map(renderCard).join('');
+}
+
+// Allow Enter key in topic input
+document.getElementById('topicInput').addEventListener('keydown', e => {
+  if (e.key === 'Enter') loadTopic();
+});
 </script>
 </body>
 </html>
